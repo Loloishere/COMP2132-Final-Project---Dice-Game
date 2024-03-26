@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Honk&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap");
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: var(--main-color);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+declare SASS V\variables
+*/
+$main-color: #ffffff;
+$second-color: rgb(240, 247, 242);
+$h1-color: rgb(108, 123, 133);
+$span-font-color: rgb(64, 77, 95);
+$grey-out-button: rgb(238, 244, 245);
+$button-color: rgb(85, 40, 85);
+
+/*
+declare SASS mixin for box shadow
+*/
+@mixin box-shadow($rounded-corners, $border-color, $if-border) {
+  box-shadow: 2px 2px 5px 2px rgb(172, 170, 170);
+  border-radius: $rounded-corners;
+  border: $if-border solid $border-color;
+}
+
+:root {
+  --main-color: $main-color;
+  --second-color: $second-color;
+  --span-font-color: $span-font-color;
+  --grey-out-button: $grey-out-button;
+  --button-color: $button-color;
+}
+
+body {
+  background-color: $main-color;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  font-family: "Honk", system-ui;
+  font-size: 20px;
+  padding-left: 40px;
+}
+
+h1 {
+  font-family: "Pixelify Sans";
+  font-size: 50px;
+  font-weight: 700;
+  color: $h1-color;
+}
+
+h2,
+span {
+  font-family: "Big Shoulders Display", sans-serif;
+  color: $span-font-color;
+}
+
+span {
+  font-weight: 500;
+  color: $span-font-color;
+  font-size: 18px;
+}
+
+button {
+  font-family: "Handjet", sans-serif;
+  color: $button-color;
+  font-size: 18px;
+  width: 100px;
+  height: 30px;
+  background-color: #fff;
+  @include box-shadow(15px, $button-color, 3px);
+  cursor: pointer;
+}
+
+#position-wrapper {
+  position: absolute;
+}
+
+#winner {
+  position: relative;
+  font-family: "Pixelify Sans";
+  @include box-shadow(12px, $button-color, 0);
+  padding: 70px;
+  display: none;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.greyout {
+  background-color: $grey-out-button;
+  color: $span-font-color;
+  cursor: none;
+}
+
+#animated-dice {
+  width: 20%;
+}
+
+img {
+  width: 80px;
+  margin: 5px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  @include box-shadow(12px, $button-color, 0);
+  margin: 50px;
+  padding: 30px;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#game-section {
+  display: flex;
+  flex-direction: row;
+}
+
+#player1,
+#player2 {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1c46b9,
+      0 0 40px #1c46b9, 0 0 50px #1c46b9;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #9a14e7, 0 0 40px #9a14e7,
+      0 0 50px #9a14e7;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 30px;
+  }
+  header {
+    padding: 0 30px;
+  }
+  #game-section {
+    display: flex;
+    flex-direction: column;
+  }
+  section {
+    margin: 5px;
+  }
+
+  footer {
+    position: relative;
+  }
+  #animated-dice {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 421px) and (max-width: 776px) {
+  h1 {
+    font-size: 30px;
+  }
+  header {
+    padding: 0 10px;
+  }
+
+  section {
+    margin: 5px;
+    padding: 10px;
+  }
+}
