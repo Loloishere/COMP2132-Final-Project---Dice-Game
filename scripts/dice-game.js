@@ -89,8 +89,8 @@ class Gameboard {
           } else if (sumBlueScore < sumPurpleScore)  {
             winner.innerHTML = "Congrats! You win👏";
             winner.style.display="block";
-              //uncomment the line below to see the cofetti effects
-            // confetti();
+            
+            confetti();
           } else{
             winner.innerHTML = "It's a tie!⚖️";
             winner.style.display="block";
