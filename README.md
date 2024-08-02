@@ -9,4 +9,4 @@ The website is a simple web game: two players roll dices in three rounds, and wh
 * Object-oriented programming
 * Sass 
 # Demo
-You can view a live demo of the website: https://dice-game-h0wk4vzz9-kellys-projects-d45310a2.vercel.app/
+You can view a live demo of the website: https://dice-game-h0wk4vzz9-kellys-projects-d45310a2.vercel.app
